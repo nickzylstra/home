@@ -2,7 +2,7 @@
 	email = nick.zylstra@gmail.com
 	name = nickzylstra
 [core]
-	excludesFile = /Users/zylstra/.gitignore
+	excludesFile = /Users/zylstra/.gitignore.global
 	autocrlf = input
 	safecrlf = true
 	editor = code --wait --new-window

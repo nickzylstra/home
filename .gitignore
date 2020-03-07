@@ -1,5 +1,6 @@
 *
 !.gitignore
+!.gitignore.global
 !.gitconfig
 !.zshrc
 !.psqlrc
