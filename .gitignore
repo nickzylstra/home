@@ -1,0 +1,8 @@
+*
+!.gitignore
+!.gitconfig
+!.zshrc
+!.psqlrc
+!.bashrc
+!.bash_profile
+!README.md

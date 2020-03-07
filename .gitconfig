@@ -1,0 +1,52 @@
+[user]
+	email = nick.zylstra@gmail.com
+	name = nickzylstra
+[core]
+	excludesFile = /Users/zylstra/.gitignore
+	autocrlf = input
+	safecrlf = true
+	editor = code --wait --new-window
+[alias]
+	c = commit
+	a = add .
+	p = push
+	puo = push -u origin
+	st = status --short --branch
+	ca = commit --amend --reuse-message=HEAD
+	co = checkout
+	cob = checkout -b
+	br = branch
+	df = diff HEAD
+	ir = !sh -c 'git rebase --interactive ${1-master}' -
+	ll = log --graph --all --pretty=format:\"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s\"
+	la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
+	dfs = diff --staged
+	done = !sh -c 'git checkout ${2-master} && git merge @{-1} && git push ${1-origin} ${2-master}' -
+	sync = !sh -c 'git checkout ${2-master} && git pull ${1-origin} ${2-master} && git checkout @{-1} && git rebase ${2-master}' -
+	unadd = reset HEAD --
+    type = cat-file -t
+    dump = cat-file -p
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+	upstream = cyan
+[color "diff"]
+	frag = magenta bold
+	func = normal bold
+	meta = yellow bold
+	new = green bold
+	old = red bold
+[color "status"]
+	added = green bold
+	branch = yellow
+	changed = yellow bold
+	untracked = cyan bold
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
