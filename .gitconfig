@@ -22,6 +22,7 @@
 	la = log --patch --stat --pretty=format:\"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s\"
 	dfs = diff --staged
 	done = !sh -c 'git checkout ${2-master} && git merge @{-1} && git push ${1-origin} ${2-master}' -
+	send = !sh -c 'git checkout ${2-master} && git merge @{-1} && git push ${1-origin} ${2-master} && git checkout @{-1}' -
 	sync = !sh -c 'git checkout ${2-master} && git pull ${1-origin} ${2-master} && git checkout @{-1} && git rebase ${2-master}' -
 	unadd = reset HEAD --
     type = cat-file -t
